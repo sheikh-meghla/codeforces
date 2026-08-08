@@ -11,23 +11,33 @@ int main() {
         cin >> a[i];
     }
     bool flag = true;
+
     int l = 0;
     int r = n-1;
-    while(l < r) {
-        if(a[l] != a[r]) {
+    while (l<r)
+    {
+        if (a[l] != a[r])
+        {
             flag = false;
             break;
         }
-
-        l++;
-        r--;
+        else
+        {
+            l++;
+            r--;
+        }
+    
+        
     }
-
-    if(flag) {
+    if (flag == true)
+    {
         cout << "YES\n";
     }
-    else {
+    else
+    {
         cout << "NO\n";
     }
+
+    
     return 0;
 }
