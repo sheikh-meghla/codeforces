@@ -11,15 +11,16 @@ int main() {
     for (int i = 0; i < s.size(); i++) {
         if (s[i] == target[count]) {
             count++;
-        }
-
-        if (count == target.size()) {
-            cout << "YES\n";
-            return 0;
-        }
+        }  
     }
 
-    cout << "NO\n";
+    if (count == target.size()) {
+        cout << "YES\n";
+    }
+    else{
+        cout << "NO\n";
 
+    }
+    
     return 0;
 }
