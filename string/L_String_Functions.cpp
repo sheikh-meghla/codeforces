@@ -15,7 +15,7 @@ int main() {
         cin >> name;
 
         if (name == "pop_back") {
-            s.pop_back();
+            s.size()+1;
         }
 
         else if (name == "front") {
