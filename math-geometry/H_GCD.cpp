@@ -6,14 +6,17 @@ int main()
     long long a, b;
     cin >> a >> b;
 
-    long long gcd = 1;
-    for (long long i = 1; i <= min(a, b); i++)
+    long long x = a;
+    long long y = b;
+
+    while (y != 0)
     {
-        if (a % i == 0 && b % i == 0)
-        {
-            gcd = i;
-        }
+        long long temp = y;
+        y = x % y;
+        x = temp;
     }
+
+    long long gcd = x;
     long long lcm = (a / gcd) * b;
 
     cout << gcd << " " << lcm << endl;
