@@ -1,6 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+long long evenSum(long long n)
+{
+    long long k = n / 2;
+    return k * (k + 1);
+}
+
+long long oddSum(long long n)
+{
+    long long k = (n + 1) / 2;
+    return k * k;
+}
+
 int main()
 {
     long long a, b;
@@ -11,23 +23,9 @@ int main()
         swap(a, b);
     }
 
-    long long sum = 0;
-    long long even = 0;
-    long long odd = 0;
-
-    for (long long i = a; i <= b; i++)
-    {
-        sum += i;
-
-        if (i % 2 == 0)
-        {
-            even += i;
-        }
-        else
-        {
-            odd += i;
-        }
-    }
+    long long sum = (a + b) * (b - a + 1) / 2;
+    long long even = evenSum(b) - evenSum(a - 1);
+    long long odd = oddSum(b) - oddSum(a - 1);
 
     cout << sum << endl;
     cout << even << endl;
