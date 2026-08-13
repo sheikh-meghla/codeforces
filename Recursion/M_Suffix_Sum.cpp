@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-long long suffix_sum(int index, int m, int arr[]) {
+long long suffix_sum(int n, int m, int arr[]) {
 
     if (m == 0) {
         return 0;
     }
 
-    return arr[index] + suffix_sum(index - 1, m - 1, arr);
+    return arr[n] + suffix_sum(n - 1, m - 1, arr);
 }
 
 int main() {
