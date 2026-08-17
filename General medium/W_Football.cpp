@@ -6,7 +6,7 @@ int main()
     int n;
     cin >> n;
 
-    string a, b;
+    string a, b, s;
     int count_a = 0, count_b = 0;
 
     cin >> a;
@@ -14,14 +14,17 @@ int main()
 
     for (int i = 1; i < n; i++)
     {
-        cin >> b;
+        cin >> s;
 
-        if (b == a)
+        if (s == a)
         {
             count_a++;
         }
         else
         {
+            if (b == "")
+                b = s;
+
             count_b++;
         }
     }
