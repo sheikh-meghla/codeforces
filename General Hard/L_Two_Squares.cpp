@@ -14,13 +14,13 @@ int main() {
     int t;
     cin >> t;
 
-    double speed_diff = abs(S1 - S2);
+    double speed = abs(S1 - S2);
 
     while (t--) {
         double q;
         cin >> q;
 
-        double ans = (L - sqrt(q)) * sqrt(2) / speed_diff;
+        double ans = (L - sqrt(q)) * sqrt(2) / speed;
 
         cout << fixed << setprecision(6) << ans << "\n";
     }
