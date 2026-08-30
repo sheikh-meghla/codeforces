@@ -6,24 +6,37 @@ int main() {
     cin >> t;
 
     while (t--) {
-        int n;
-        cin >> n;
+        int n, k;
+        cin >> n >> k;
 
-        int a[200];
+        vector<int> a(n);
 
-        for (int i = 0; i < 2 * n; i++) {
+        for (int i = 0; i < n; i++) {
             cin >> a[i];
         }
 
-        sort(a, a + 2 * n);
-
-        int ans = 0;
-
-        for (int i = 0; i < 2 * n; i += 2) {
-            ans += a[i];
+        if (k > 1) {
+            cout << "YES\n";
         }
+        else {
+            bool flag = true;
 
-        cout << ans << "\n";
+            for (int i = 0; i < n - 1; i++) {
+                if (a[i] > a[i + 1]) {
+                    flag = false;
+                    break;
+                }
+            }
+
+            if (flag)
+            {
+                cout << "YES\n";
+            }
+            else
+            {
+                cout << "NO\n";
+            }
+        }
     }
 
     return 0;
