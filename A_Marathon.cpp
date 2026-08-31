@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main() {
@@ -6,32 +6,25 @@ int main() {
     cin >> t;
 
     while (t--) {
-        int n, k;
-        cin >> n >> k;
+        int a, b, c, d;
+        cin >> a >> b >> c >> d;
 
-        int a[n], b[n];
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-        }
-        for (int i = 0; i < n; i++) {
-            cin >> b[i];
-        }
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
+        int ans = 0;
 
-                if (a[i] > a[j]) {
-                    swap(a[i], a[j]);
-                    swap(b[i], b[j]);
-                }
-            }
+        if (b > a)
+        {
+            ans++;
         }
-        for (int i = 0; i < n; i++) {
-            if (a[i] <= k) {
-                k += b[i];
-            }
+        if (c > a)
+        {
+            ans++;
+        }
+        if (d > a)
+        {
+            ans++;
         }
 
-        cout << k << endl;
+        cout << ans << endl;
     }
 
     return 0;
