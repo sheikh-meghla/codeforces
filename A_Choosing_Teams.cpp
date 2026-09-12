@@ -11,6 +11,7 @@ int main()
     for (int i = 0; i < n; i++)
     {
         int y;
+        int y;
         cin >> y;
 
         if (y + k <= 5)
