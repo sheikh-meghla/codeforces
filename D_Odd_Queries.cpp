@@ -1,50 +1,54 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
-    
+
     int t;
     cin >> t;
+
     while (t--)
     {
-        int n,k;
-        cin >> n >> k;
+        int n, q;
+        cin >> n >> q;
 
-        int a[n];
-        for(int i = 0; i < n; i++){
-            cin >> a[i]; 
+        long long a[n + 1];
+        long long p[n + 1];
+
+        p[0] = 0;
+
+        long long total = 0;
+
+        for (int i = 1; i <= n; i++)
+        {
+            cin >> a[i];
+
+            total += a[i];
+            p[i] = p[i - 1] + a[i];
         }
 
-         
-        while (k--)
+        while (q--)
         {
-            int l, r, c;
+            int l, r;
+            long long c;
+
             cin >> l >> r >> c;
 
-            for(int j = l-1; j < r; j++){
-                a[j] = c;   
-            }
+            long long sum = p[r] - p[l - 1];
 
-            long long sum_a = 0;
-            
-            for(int i = 0; i < n; i++){
-                sum_a += a[i];
-            }
+            long long len = r - l + 1;
 
-            if (sum_a % 2 != 0)
+            long long newSum = total - sum + len * c;
+
+            if (newSum % 2 != 0)
             {
                 cout << "YES\n";
             }
-            else{
+            else
+            {
                 cout << "NO\n";
             }
-            
-            
         }
-
-        
-        
     }
-    
+
     return 0;
 }
