@@ -21,6 +21,6 @@ int main() {
 
         cout << c1 << " " << c2 << '\n';
     }
-
+    
     return 0;
 }
